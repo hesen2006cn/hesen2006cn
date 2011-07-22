@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MyAndroidActivity! Hesen2011</string>
+    <string name="app_name">MyAndroid</string>
+    <string name="home_activity">Home Activity</string>
+     <string name="search_label">search_label</string>
+      <string name="search_hint">search_hint</string>
+</resources>

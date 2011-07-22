@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MyAndroid</title>
+	<link rel="stylesheet"  href="file:///android_asset/css/jquery.mobile.min.css" />
+	<script src="file:///android_asset/js/jquery-1.4.4.min.js"></script>
+	<!--script src="file:///android_asset/js/jquery.mobile.min.js"></script-->
+</head> 
+<body>
+
+<div data-role="content">
+	<form action="/" method="post">
+	<ul data-role="listview" class="ui-listview">
+		<li data-role="fieldcontain" class="ui-li ui-li-static ui-body-c ui-field-contain ui-body ui-br">
+        	<label for="name" class="ui-input-text">Text Input:</label>
+        	<input type="text" value="" id="name" name="name" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c">
+		</li>
+		
+		<li data-role="fieldcontain" class="ui-li ui-li-static ui-body-c ui-field-contain ui-body ui-br">
+        	<label for="search" class="ui-input-text">Search Input:</label>
+         	<div class="ui-input-search ui-shadow-inset ui-btn-corner-all ui-btn-shadow ui-icon-searchfield ui-body-c"><input type="true" data-type="search" value="" id="search" name="password" class="ui-input-text ui-body-null"><a title="clear text" class="ui-input-clear ui-btn ui-btn-up-c ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-input-clear-hidden" href="#" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">clear text</span><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a></div>
+		</li>
+
+		<li class="ui-body ui-body-b ui-li ui-li-static ui-body-c">
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a">
+				<div data-theme="d" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-d" aria-disabled="false">
+				<span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Cancel</span></span>
+				<button data-theme="d" type="submit" class="ui-btn-hidden" aria-disabled="false">Cancel</button>
+				</div>
+				</div>
+				<div class="ui-block-b">
+				<div data-theme="a" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-a" aria-disabled="false">
+				<span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Submit</span></span>
+				<button data-theme="a" type="submit" class="ui-btn-hidden" aria-disabled="false">Submit</button>
+				</div>
+				</div>
+			</fieldset>
+		</li>
+	</ul>
+	</form>
+</div>
+
+</body>
+
+<script>
+
+function getData(){
+	var postdata = "my_post-data";
+	$.post('/Api/getData/',{post_data:postdata},function(data){
+		alert(data);
+	});
+}
+
+getData();
+
+</script>
+
+</html>
