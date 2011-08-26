@@ -33,6 +33,7 @@ endif " has("autocmd")
 
 set cursorline " 突出显示当前行
 set tabstop=4 " 设定 tab 长度为 4
+set shiftwidth=4 "设置当行之间交错时使用4个空格
 set autochdir " 自动切换当前目录为当前文件所在的目录
 set hlsearch " 搜索时高亮显示被找到的文本
 set matchtime=2 " 短暂跳转到匹配括号的时间
@@ -50,7 +51,8 @@ endif
      
 set clipboard+=unnamed   "与windows共享剪贴板
 
-map <F10> :tabnext<CR>
+map <F10> :tabprev<CR>
+map <F11> :tabnext<CR>
 map <F12> :NERDTreeToggle<CR>
 imap <F12> <ESC>:NERDTreeToggle<CR>
 
@@ -76,8 +78,10 @@ nmap <silent> <leader>ll :LUBufs<cr>
 "映射LUWalk为,lw
 nmap <silent> <leader>lw :LUWalk<cr>
 
-"find ./ -print | sort | awk '{printf "%s\t%s\t1\n", $0, $0;}' >filenametag
-let g:LookupFile_TagExpr = '"./filenametag"'
+"创建查询cache命令
+"find ./ -print | sort | awk '{printf "%s\t%s\t1\n", $0, $0;}' >.filenametag
+
+let g:LookupFile_TagExpr = '"./.filenametag"'
 
 " lookup file with ignore case
 function! LookupFile_IgnoreCaseFunc(pattern)
